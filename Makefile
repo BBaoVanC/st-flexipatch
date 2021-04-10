@@ -5,8 +5,8 @@
 include config.mk
 
 # Uncomment the line below and the hb.o line further down for the ligatures patch
-#LIGATURES_C = hb.c
-#LIGATURES_H = hb.h
+LIGATURES_C = hb.c
+LIGATURES_H = hb.h
 
 # Uncomment this for the SIXEL patch / SIXEL_PATCH
 #SIXEL_C = sixel.c sixel_hls.c
@@ -34,7 +34,7 @@ patches.h:
 st.o: config.h st.h win.h
 x.o: arg.h config.h st.h win.h $(LIGATURES_H)
 # Uncomment the below line for the ligatures patch
-#hb.o: st.h
+hb.o: st.h
 
 $(OBJ): config.h config.mk patches.h
 

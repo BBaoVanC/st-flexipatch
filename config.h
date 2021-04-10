@@ -5,10 +5,11 @@
  *
  * font: see http://freedesktop.org/software/fontconfig/fontconfig-user.html
  */
-static char *font = "Liberation Mono:pixelsize=12:antialias=true:autohint=true";
+static char *font = "monospace:size=10:antialias=true:autohint=true";
 #if FONT2_PATCH
 /* Spare fonts */
 static char *font2[] = {
+	"Noto Color Emoji:size=10:antialias=true:autohint=true",
 /*	"Inconsolata for Powerline:pixelsize=12:antialias=true:autohint=true", */
 /*	"Hack Nerd Font Mono:pixelsize=11:antialias=true:autohint=true", */
 };
@@ -133,32 +134,32 @@ float stat_alpha = 0.46; //constant alpha value that'll get added to grad_alpha
 /* Terminal colors (16 first used in escape sequence) */
 static const char *colorname[] = {
 	/* 8 normal colors */
-	"black",
-	"red3",
-	"green3",
-	"yellow3",
-	"blue2",
-	"magenta3",
-	"cyan3",
-	"gray90",
+	"#3b4252", /* black	(nord1) */
+	"#bf616a", /* red	(nord11) */
+	"#a3be8c", /* green	(nord14) */
+	"#ebcb8b", /* yellow	(nord13) */
+	"#81a1c1", /* blue	(nord9) */
+	"#b48ead", /* magenta	(nord15) */
+	"#88c0d0", /* cyan	(nord8) */
+	"#e5e9f0", /* white	(nord5) */
 
 	/* 8 bright colors */
-	"gray50",
-	"red",
-	"green",
-	"yellow",
-	"#5c5cff",
-	"magenta",
-	"cyan",
-	"white",
+	"#4c566a", /* black	(nord3) */
+	"#bf616a", /* red	(nord11) */
+	"#a3be8c", /* green	(nord14) */
+	"#ebcb8b", /* yellow	(nord13) */
+	"#81a1c1", /* blue	(nord9) */
+	"#b48ead", /* magenta	(nord15) */
+	"#8fbcbb", /* cyan	(nord7) */
+	"#eceff4", /* white	(nord6) */
 
 	[255] = 0,
 
 	/* more colors can be added after 255 to use with DefaultXX */
-	"#add8e6", /* 256 -> cursor */
-	"#555555", /* 257 -> rev cursor*/
-	"#000000", /* 258 -> bg */
-	"#e5e5e5", /* 259 -> fg */
+	"#cccccc", /* 256 -> cursor */
+	"#555555", /* 257 -> rev cursor */
+	"#2e3440", /* 258 -> bg (nord0) */
+	"#d8dee9", /* 259 -> fg (nord4) */
 };
 
 
@@ -196,7 +197,7 @@ static char* mouseshape = "xterm";
 /*
  * Default colour and shape of the mouse cursor
  */
-static unsigned int mouseshape = XC_xterm;
+static unsigned int mouseshape = XC_left_ptr;
 static unsigned int mousefg = 7;
 static unsigned int mousebg = 0;
 #endif // THEMED_CURSOR_PATCH
